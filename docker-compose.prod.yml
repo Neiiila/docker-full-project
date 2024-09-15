@@ -1,0 +1,14 @@
+version: "3"
+services:
+  nginx: 
+    image: nginx:stable-alpine
+    ports:
+      - "80:80"
+  node-app:
+    build: 
+      context: . # location of dockerfile
+      args: 
+        NODE_ENV: production # so that dockerfile knonws that it is in production mode
+    environment:
+      - NODE_ENV=production # this is for this docker-compose file itself
+    command: node index.js
