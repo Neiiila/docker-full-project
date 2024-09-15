@@ -13,7 +13,7 @@ services:
       - NODE_ENV=production # this is for this docker-compose file itself
       - MONGO_USER=${MONGO_USER} # grap this value from the ubuntu machine or deployment machine
       - MONGO_PASSWORD=${MONGO_PASSWORD} # grap this value from the ubuntu machine or deployment machine
-      - SECRET_REDIS=${REDIS_SECRET}
+      - SECRET_REDIS=${SECRET_REDIS}
     command: node index.js
   database:
     environment:
