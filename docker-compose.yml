@@ -7,7 +7,7 @@ services:
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro # readonly
   node-app:
-    build: .
+    build: neiiila/node-app  # instead of "." which creates container based on docker file existed in current directory, it will be based on my pushed image pushed in docker hub 
     # ports: 
     #   - "3000:5000" # No need to expose the port where ngnix is proxy 
     environment:
