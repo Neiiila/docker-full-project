@@ -16,9 +16,7 @@ services:
       - SECRET_REDIS=${REDIS_SECRET}
     command: node index.js
   mongo:
+    image: mongo:4.4
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
-
-
-# NOTE : in production environment and to secure keys and variables we set the values of the environment variables in the deployment machine and we grap them from it
