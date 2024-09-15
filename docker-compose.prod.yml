@@ -15,8 +15,7 @@ services:
       - MONGO_PASSWORD=${MONGO_PASSWORD} # grap this value from the ubuntu machine or deployment machine
       - SECRET_REDIS=${REDIS_SECRET}
     command: node index.js
-  mongo:
-    image: mongo:4.4
+  database:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
