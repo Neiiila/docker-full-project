@@ -64,11 +64,11 @@ app.use(session({
     }
     }) // sessions allow you to store data that persist ( should stay, or usually needed) without storing it directly in client
 )
-console.log('Session Secret:', SECRET_REDIS); // Debug to check the value
 
 app.use(express.json()) // to parse the body of the request and attached it to request
 
 app.get('/api/v1' , (req , res) => {
+
     res.send('<h1>Welcome to express API v1 !</h1>')
     console.log("Hello from the server !")
     })

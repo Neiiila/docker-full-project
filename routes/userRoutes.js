@@ -8,4 +8,7 @@ router.route('/')
     .get(UserControllers.login)
     .post(UserControllers.signUp)
 
+router.route('/logout')
+    .get(UserControllers.logout)
+
 module.exports = router
