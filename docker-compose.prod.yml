@@ -11,4 +11,14 @@ services:
         NODE_ENV: production # so that dockerfile knonws that it is in production mode
     environment:
       - NODE_ENV=production # this is for this docker-compose file itself
+      - MONGO_USER=${MONGO_USER} # grap this value from the ubuntu machine or deployment machine
+      - MONGO_PASSWORD=${MONGO_PASSWORD} # grap this value from the ubuntu machine or deployment machine
+      - SECRET_REDIS=${REDIS_SECRET}
     command: node index.js
+  mongo:
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+
+
+# NOTE : in production environment and to secure keys and variables we set the values of the environment variables in the deployment machine and we grap them from it
