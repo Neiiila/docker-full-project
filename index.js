@@ -55,10 +55,10 @@ app.use(cors({})) // to allow the request from the client to the server
 app.use(session({   
     store: new RedisStore({ client: redisClient}), // store manage the session data
     secret: SECRET_REDIS,
+    resave: false,
+    saveUninitialized: false,
     cookie: { // this cookie holds the id of the session related to the user who sent the request
         secure: false,
-        resave: false,
-        saveUninitialized: false,
         httpOnly: true,
         maxAge: 300000 // the time that the session will be stored in the server after that it will be deleted
     }
