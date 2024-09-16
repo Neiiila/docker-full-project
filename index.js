@@ -81,7 +81,7 @@ app.use("/api/v1/users", userRouter)
 
 const port = process.env.PORT || 3000 // means that if the environment variable called portis set to a value we gonna take it else we gonna use 3000 
 
-app.listen( port , () =>  console.log(`Hello ${process.env.NAME} !, from port ${port}`))
+app.listen( port , () =>  console.log(`Hello World! from port ${port}`))
 
 
 
